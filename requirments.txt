@@ -1,0 +1,26 @@
+The following fields should be part of resume.
+
+PersonalInformation
+    1. Name
+    2. Job Title
+    3. Email
+    4. Phone
+    5. Location
+    6. summary
+
+Experience (Can have multiple Experiences)
+    1. Employer
+    2. Job Title
+    3. City
+    4. Start date
+    5. End date
+    6. Description
+
+Skills (Can have multiple skills)
+    1. Skill Name
+
+Education (Can have multiple Education details)
+    1. Degree
+    2. College Name
+    3. City
+    4. cgpa

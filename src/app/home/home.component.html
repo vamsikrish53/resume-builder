@@ -1,0 +1,16 @@
+<div class="home">
+
+    <div class="resume-sections">
+        <div class="" *ngIf="!editMode">
+            <a (click)="loadSection(1)"> Basic Details </a>
+            <a (click)="loadSection(2)"> Experience </a>
+            <a (click)="loadSection(3)"> Skills </a>
+            <a (click)="loadSection(4)"> Education </a>
+        </div>
+        <div #container></div>
+    </div>
+
+    <div class="resume-preview">
+    </div>
+
+</div>
