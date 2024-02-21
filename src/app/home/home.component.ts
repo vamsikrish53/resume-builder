@@ -41,4 +41,9 @@ export class HomeComponent implements OnInit {
     }
 
   }
+
+  closeEditMode() {
+    this.container.clear();
+    this.editMode = false;
+  }
 }

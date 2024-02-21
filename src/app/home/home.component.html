@@ -7,6 +7,7 @@
             <a (click)="loadSection(3)"> Skills </a>
             <a (click)="loadSection(4)"> Education </a>
         </div>
+        <a (click)="closeEditMode()" *ngIf="editMode">Back </a>
         <div #container></div>
     </div>
 

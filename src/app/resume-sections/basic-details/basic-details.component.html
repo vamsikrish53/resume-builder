@@ -1,27 +1,28 @@
-<form class="basic-details-form">
+<form [formGroup]="myForm" (ngSubmit)="saveDetails(myForm)" class="basic-details-form">
     <header> Basic Information</header>
     <mat-form-field class="full-name">
         <mat-label>Full name</mat-label>
-        <input matInput>
+        <input formControlName="fullName" matInput>
     </mat-form-field>
     <mat-form-field class="job-title">
         <mat-label>Job title</mat-label>
-        <input matInput>
+        <input formControlName="jobTitle" matInput>
     </mat-form-field>
     <mat-form-field class="email">
         <mat-label>Email</mat-label>
-        <input type="email" matInput placeholder="Ex. hello@example.com">
+        <input formControlName="email" type="email" matInput placeholder="Ex. hello@example.com">
     </mat-form-field>
     <mat-form-field class="phone">
         <mat-label>Phone</mat-label>
-        <input type="number" matInput>
+        <input formControlName="phone" type="number" matInput>
     </mat-form-field>
     <mat-form-field class="location">
         <mat-label>Location</mat-label>
-        <input matInput>
+        <input formControlName="location" matInput>
     </mat-form-field>
     <mat-form-field class="summary">
         <mat-label>Summary</mat-label>
-        <textarea matInput placeholder="Provide profile summary"> </textarea>
+        <textarea formControlName="summary" matInput placeholder="Provide profile summary"> </textarea>
     </mat-form-field>
+    <button type="submit">Save</button>
 </form>

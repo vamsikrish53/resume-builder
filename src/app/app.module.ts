@@ -8,10 +8,11 @@ import { HomeComponent } from './home/home.component';
 import { BasicDetailsComponent } from './resume-sections/basic-details/basic-details.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ExperienceComponent } from './resume-sections/experience/experience.component';
 import { SkillComponent } from './resume-sections/skill/skill.component';
 import { EducationComponent } from './resume-sections/education/education.component';
+import { ResumeService } from './service/resume.service';
 
 @NgModule({
   declarations: [
@@ -28,9 +29,10 @@ import { EducationComponent } from './resume-sections/education/education.compon
     BrowserAnimationsModule,
     MatInputModule,
     MatFormFieldModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ResumeService],
   bootstrap: [HomeComponent]
 })
 export class AppModule { }
