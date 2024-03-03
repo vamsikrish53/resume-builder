@@ -1,6 +1,26 @@
-<form class="education-form">
-    <header>Skills</header>
-    <mat-form-field class="skill-name">
-        <mat-label>Skill Name</mat-label>
-        <input matInput>
-    </mat-form-field>
+<form [formGroup]="skillForm" (ngSubmit)="saveDetails()" class="skill-form">
+  <header>Skills</header>
+  <div formArrayName="skills" class="fields">
+    <div *ngFor="let skill of skillsControls; let i = index">
+      <div [formGroupName]="i">
+        <mat-form-field class="skill-name">
+          <mat-label>Skill Name</mat-label>
+          <input formControlName="skillName" matInput />
+        </mat-form-field>
+        <button
+          mat-raised-button
+          color="warn"
+          (click)="removeSkill(i)"
+          style="margin-left: 20px"
+        >
+          Remove
+        </button>
+      </div>
+    </div>
+    <button mat-raised-button (click)="addSkill('')" class="add-skill-btn">
+      Add Skill
+    </button>
+  </div>
+
+  <button mat-raised-button class="save-btn" type="submit">Save</button>
+</form>

@@ -1,0 +1,46 @@
+<form
+  [formGroup]="personalInformationForm"
+  (ngSubmit)="saveDetails()"
+  class="personal-information-form"
+>
+  <header>Basic Information</header>
+  <div class="fields">
+    <mat-form-field class="full-name">
+      <mat-label>Full name</mat-label>
+      <input formControlName="name" matInput />
+    </mat-form-field>
+    <mat-form-field class="job-title">
+      <mat-label>Job title</mat-label>
+      <input formControlName="jobTitle" matInput />
+    </mat-form-field>
+    <mat-form-field class="email">
+      <mat-label>Email</mat-label>
+      <input
+        formControlName="email"
+        type="email"
+        matInput
+        placeholder="Ex. hello@example.com"
+      />
+    </mat-form-field>
+    <mat-form-field class="phone">
+      <mat-label>Phone</mat-label>
+      <input
+        formControlName="phoneNumber"
+        placeholder="Provide 10 digit number"
+        type="text"
+        maxlength="10"
+        pattern="\d{10}"
+        matInput
+      />
+    </mat-form-field>
+    <mat-form-field class="location">
+      <mat-label>Location</mat-label>
+      <input formControlName="location" matInput />
+    </mat-form-field>
+    <mat-form-field class="summary">
+      <mat-label>Profile Summary</mat-label>
+      <textarea formControlName="profileSummary" matInput rows="10"> </textarea>
+    </mat-form-field>
+  </div>
+  <button mat-raised-button class="save-btn" type="submit">Save</button>
+</form>

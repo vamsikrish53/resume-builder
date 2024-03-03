@@ -1,0 +1,59 @@
+{
+    "personalInformation": {
+        "name": "John David",
+        "jobTitle": "Web Developer",
+        "email": "john@gmail.com",
+        "phoneNumber": "1234567890",
+        "location": "India",
+        "profileSummary": "An excellent academic record, ability to understand and test software, working knowledge of Azure, and a strong understanding of core internet technologies. I seek to work as a System Engineer to further my knowledge in the IT domain and utilize my skills."
+    },
+    "skills": [
+        {
+            "skillName": "React"
+        },
+        {
+            "skillName": "veu"
+        },
+        {
+            "skillName": "Angular"
+        },
+        {
+            "skillName": "Javascript"
+        },
+        {
+            "skillName": "Typescript"
+        },
+        {
+            "skillName": "Node.js"
+        },
+        {
+            "skillName": "HTML"
+        },
+        {
+            "skillName": "CSS"
+        },
+        {
+            "skillName": "BootStarp"
+        }
+    ],
+    "experiences": [
+        {
+            "companyName": "Google",
+            "jobTitle": "Web Developer",
+            "city": "India",
+            "startDate": "2020-01-01",
+            "endDate": "2024-12-20",
+            "jobSummary": "<ul><li>Write well designed, testable, efficient code by using best software development practices</li> <li>Create website layout/user interface by using standard HTML/CSS practices</li> <li>Integrate data from various back-end services and databases</li> <li>Gather and refine specifications and requirements based on technical needs</li> <li>Create and maintain software documentation</li> <li>Be responsible for maintaining, expanding, and scaling our site</li> <li>Stay plugged into emerging technologies/industry trends and apply them into operations and activities</li> <li>Cooperate with web designers to match visual design intent</li> <li>Proven working experience in web programming</li> <li>Adequate knowledge of relational database systems, Object Oriented Programming and web application development</li><br></ul>"
+        }
+    ],
+    "educations": [
+        {
+            "degreeName": "Computer Science and Engineering",
+            "collegeName": "XYZ College",
+            "city": "India",
+            "cgpa": "85",
+            "startDate": "2016-03-13",
+            "endDate": "2019-12-15"
+        }
+    ]
+}

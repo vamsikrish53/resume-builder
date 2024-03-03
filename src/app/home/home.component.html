@@ -1,17 +1,182 @@
+<div class="header">
+  <h1>Resume Builder</h1>
+  <h1>Made with ❤️ by Krish</h1>
+</div>
+
 <div class="home">
+  <div class="resume-sections">
+    <div class="sections" *ngIf="!editMode">
+      <div class="section-header" (click)="loadSection(1)">
+        <fa-icon class="leftIcon" [icon]="faIdCard"></fa-icon>
+        Basic Details
+        <fa-icon class="rightIcon" [icon]="faRight"></fa-icon>
+      </div>
+      <div class="section-header" (click)="loadSection(2)">
+        <fa-icon class="leftIcon" [icon]="faStar"></fa-icon>
+        Skills
+        <fa-icon class="rightIcon" [icon]="faRight"></fa-icon>
+      </div>
+      <div class="section-header" (click)="loadSection(3)">
+        <fa-icon class="leftIcon" [icon]="faBreifcase"></fa-icon>
+        Experience
+        <fa-icon class="rightIcon" [icon]="faRight"></fa-icon>
+      </div>
+      <div class="section-header" (click)="loadSection(4)">
+        <fa-icon class="leftIcon" [icon]="faUserGraduate"></fa-icon>
+        Education
+        <fa-icon class="rightIcon" [icon]="faRight"></fa-icon>
+      </div>
+    </div>
+    <div class="download-btns" *ngIf="!editMode">
+      <button
+        mat-raised-button
+        type="submit"
+        style="background: #388087"
+        (click)="preFillSampleData()"
+      >
+        Prefill Sample Data
+      </button>
+      <button
+        mat-raised-button
+        type="submit"
+        style="background: #388087"
+        (click)="openPdf(false)"
+      >
+        View Resume
+      </button>
+      <button
+        mat-raised-button
+        type="submit"
+        style="background: #388087"
+        (click)="openPdf(true)"
+      >
+        Download PDF
+      </button>
+    </div>
+    <div class="back-btn" *ngIf="editMode" (click)="closeEditMode()">
+      <fa-icon class="leftIcon" [icon]="faLeft"></fa-icon>
+      Back
+    </div>
 
-    <div class="resume-sections">
-        <div class="" *ngIf="!editMode">
-            <a (click)="loadSection(1)"> Basic Details </a>
-            <a (click)="loadSection(2)"> Experience </a>
-            <a (click)="loadSection(3)"> Skills </a>
-            <a (click)="loadSection(4)"> Education </a>
+    <div #editContainer class="edit-section">
+      <!--  Injected dynamically -->
+    </div>
+  </div>
+
+  <div class="resume-preview">
+    <div class="preview">
+      <div class="empty-resume-msg" *ngIf="showPreviewMsg">
+        Fill Basic Details section to preview resume
+      </div>
+      <div class="personal-information-sec">
+        <h1>{{ resumeData?.personalInformation?.name }}</h1>
+        <h1>{{ resumeData?.personalInformation?.jobTitle }}</h1>
+        <div class="contact-sec">
+          <p>
+            {{
+              resumeData?.personalInformation?.email
+                ? "E: " + resumeData?.personalInformation?.email
+                : ""
+            }}
+          </p>
+          <p>
+            {{
+              resumeData?.personalInformation?.phoneNumber
+                ? "P: " + resumeData?.personalInformation?.phoneNumber
+                : ""
+            }}
+          </p>
+          <p>
+            {{
+              resumeData?.personalInformation?.location
+                ? "A: " + resumeData?.personalInformation?.location
+                : ""
+            }}
+          </p>
         </div>
-        <a (click)="closeEditMode()" *ngIf="editMode">Back </a>
-        <div #container></div>
+        <div
+          class="summary"
+          *ngIf="resumeData?.personalInformation?.profileSummary"
+        >
+          <h2>Profile Summary</h2>
+          <p>{{ resumeData?.personalInformation?.profileSummary }}</p>
+        </div>
+      </div>
+      <div
+        class="skills"
+        *ngIf="resumeData?.skills && resumeData.skills.length > 0"
+      >
+        <h2>Skills</h2>
+        <div class="skill-row">
+          <ng-container *ngFor="let item of resumeData.skills; let i = index">
+            <div class="skill-col">
+              <li>{{ resumeData.skills[i].skillName }}</li>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+      <div
+        class="experience-sec"
+        *ngIf="resumeData?.experiences && resumeData.experiences.length > 0"
+      >
+        <h2>Experience</h2>
+        <div class="company-details">
+          <h4>{{ resumeData.experiences[0].companyName }}</h4>
+          <div style="display: flex; justify-content: space-between">
+            <h4>
+              {{
+                resumeData.experiences[0].jobTitle +
+                  ", " +
+                  resumeData.experiences[0].city
+              }}
+            </h4>
+            <h4>
+              {{
+                resumeData.experiences[0].startDate +
+                  " to " +
+                  resumeData.experiences[0].endDate
+              }}
+            </h4>
+          </div>
+          <p
+            [innerHTML]="parseHTMLContent(resumeData.experiences[0].jobSummary)"
+          ></p>
+        </div>
+      </div>
+      <div
+        class="education-sec"
+        *ngIf="resumeData?.educations && resumeData.educations.length > 0"
+      >
+        <h2>Education</h2>
+        <div class="education-details">
+          <h4 style="font-weight: 500">
+            {{ resumeData.educations[0].degreeName }}
+          </h4>
+          <div style="display: flex; justify-content: space-between">
+            <h4>
+              {{
+                resumeData.educations[0]?.collegeName +
+                  ", " +
+                  resumeData.educations[0]?.city
+              }}
+            </h4>
+            <h4>
+              {{
+                resumeData.educations[0]?.startDate +
+                  " to " +
+                  resumeData.educations[0]?.endDate
+              }}
+            </h4>
+          </div>
+          <p style="margin-top: 0">
+            {{
+              resumeData.educations[0]?.cgpa
+                ? "Grade: " + resumeData.educations[0]?.cgpa
+                : ""
+            }}
+          </p>
+        </div>
+      </div>
     </div>
-
-    <div class="resume-preview">
-    </div>
-
+  </div>
 </div>

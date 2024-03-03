@@ -1,11 +1,10 @@
 export class Skill {
-    private skillName: string;
+  private _skillName!: string;
 
-    constructor(skillName: string) {
-        this.skillName = skillName;
-    }
-
-    public getSkillName(): string {
-        return this.skillName;
-    }
+  public get skillName(): string {
+    return this._skillName;
+  }
+  public set skillName(value: string) {
+    this._skillName = value;
+  }
 }

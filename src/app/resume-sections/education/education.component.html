@@ -1,27 +1,34 @@
-<form class="education-form">
-    <header>Education Details</header>
+<form
+  [formGroup]="educationForm"
+  (ngSubmit)="saveDetails()"
+  class="education-form"
+>
+  <header>Education Details</header>
+  <div class="fields">
     <mat-form-field class="degree-name">
-        <mat-label>Degree name</mat-label>
-        <input matInput>
+      <mat-label>Degree name</mat-label>
+      <input formControlName="degreeName" matInput />
     </mat-form-field>
     <mat-form-field class="clg-name">
-        <mat-label>College Name</mat-label>
-        <input matInput>
+      <mat-label>College Name</mat-label>
+      <input formControlName="collegeName" matInput />
     </mat-form-field>
     <mat-form-field class="city">
-        <mat-label>City</mat-label>
-        <input matInput>
+      <mat-label>City</mat-label>
+      <input formControlName="city" matInput />
     </mat-form-field>
     <mat-form-field class="cgpa">
-        <mat-label>CGPA</mat-label>
-        <input matInput>
+      <mat-label>CGPA</mat-label>
+      <input formControlName="cgpa" matInput />
     </mat-form-field>
     <mat-form-field class="start-date">
-        <mat-label>Course Start date</mat-label>
-        <input type="date" matInput>
+      <mat-label>Course Start date</mat-label>
+      <input formControlName="startDate" type="date" matInput />
     </mat-form-field>
     <mat-form-field class="end-date">
-        <mat-label>Course End date</mat-label>
-        <input type="date" matInput>
+      <mat-label>Course End date</mat-label>
+      <input formControlName="endDate" type="date" matInput />
     </mat-form-field>
+  </div>
+  <button mat-raised-button class="save-btn" type="submit">Save</button>
 </form>

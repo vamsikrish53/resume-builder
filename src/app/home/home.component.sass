@@ -1,22 +1,108 @@
-.home 
+.header
+    background-color: #388087
+    height: 50px
+    padding: 0 20px
+    display: flex
+    justify-content: space-between
+    h1
+        position: relative
+        top: 20%
+
+.home
     display: flex
     flex-direction: row
     width: 100%
     height: 100%
     .resume-sections
         width: 30%
-        //height: 100%
-        //background-color: red
-        margin: 50px
-        display: flex
-        flex-direction: column
-        a
-         margin: 20px
-         cursor: pointer
-         border-bottom: 1px solid grey
+        .sections
+            display: flex
+            flex-direction: column
+            .section-header
+                position: relative
+                padding-bottom: 8px
+                margin-top: 30px
+                margin-left: 20px
+                margin-right: 20px
+                cursor: pointer
+                border-bottom: 1px solid #BADFE7
+                font-weight: 400
+                font-size: 20px
+        .leftIcon
+            padding: 8px
+            font-size: 20px
+        .rightIcon
+            position: absolute
+            right: 10px
+            font-size: 20px
+        .download-btns
+            display: flex
+            justify-content: space-between
+            margin: 30px
+        .back-btn
+            font-size: 20px
+            margin: 30px
+            cursor: pointer
+            border-bottom: 1px solid #BADFE7
+            padding-bottom: 8px
     .resume-preview 
         width: 70%
-        height: 100%
-        //background-color: yellow
+        height: 31cm
+        background-color: #e3e3d9
     
+.resume-preview
+    .empty-resume-msg
+        font-size: 25px
+        display: flex
+        justify-content: center
+        position: relative
+        top: 25%
+
+.preview
+    background: white
+    display: block
+    margin: 20px auto
+    margin-bottom: 0.5cm
+    box-shadow: 0 0 0.5cm rgba(0,0,0,0.5)
+    width: 21cm
+    height: 29.7cm
+    font-size: 16px
+    .personal-information-sec
+        padding: 40px 40px 0 40px
+        h1
+            margin: 0
+        .contact-sec
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+        .summary
+            h2
+                text-decoration: underline
+                margin: 0
+            p
+                text-align: justify
+    .skills
+        padding: 0 40px 0 40px
+        h2
+            text-decoration: underline
+            margin: 0
+        .skill-row
+            display: flex
+            flex-wrap: wrap
+            justify-content: space-between
+        .skill-col
+            width: 33%
+    .experience-sec, .education-sec
+        padding: 0 40px 0 40px
+        h2
+            text-decoration: underline
+            margin: 0
+        .company-details, .education-details
+            p
+                margin-top: 10px
+                margin-bottom: 0
+            h4
+                margin: 0
+                font-weight: 500
+
 

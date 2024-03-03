@@ -1,41 +1,45 @@
 export class Experience {
-    private employerName: string;
-    private jobTitle: string;
-    private city: string;
-    private startDate: string;
-    private endDate: string;
-    private description: string;
+  private _companyName!: string;
+  private _jobTitle!: string;
+  private _city!: string;
+  private _startDate!: string;
+  private _endDate!: string;
+  private _jobSummary!: string;
 
-    constructor(employerName: string, jobTitle: string, city: string, startDate: string, endDate: string, description: string) {
-        this.employerName = employerName;
-        this.jobTitle = jobTitle;
-        this.city = city;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.description = description;
-    }
-
-    public getEmployerName(): string {
-        return this.employerName;
-    }
-
-    public getjobTitle(): string {
-        return this.jobTitle;
-    }
-
-    public getCity(): string {
-        return this.city;
-    }
-
-    public getStartDate(): string {
-        return this.startDate;
-    }
-
-    public getEndDate(): string {
-        return this.endDate;
-    }
-
-    public getDescription(): string {
-        return this.description;
-    }
+  public get companyName(): string {
+    return this._companyName;
+  }
+  public set companyName(value: string) {
+    this._companyName = value;
+  }
+  public get jobTitle(): string {
+    return this._jobTitle;
+  }
+  public set jobTitle(value: string) {
+    this._jobTitle = value;
+  }
+  public get city(): string {
+    return this._city;
+  }
+  public set city(value: string) {
+    this._city = value;
+  }
+  public get startDate(): string {
+    return this._startDate;
+  }
+  public set startDate(value: string) {
+    this._startDate = value;
+  }
+  public get endDate(): string {
+    return this._endDate;
+  }
+  public set endDate(value: string) {
+    this._endDate = value;
+  }
+  public get jobSummary(): string {
+    return this._jobSummary;
+  }
+  public set jobSummary(value: string) {
+    this._jobSummary = value;
+  }
 }
